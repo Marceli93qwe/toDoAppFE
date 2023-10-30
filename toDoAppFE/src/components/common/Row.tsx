@@ -13,7 +13,7 @@ export const Row = ({children, style}: Props) => {
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
-            justifyContent: "space-between"
+            
         }}>
             <>{children}</>
         </div>
