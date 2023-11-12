@@ -1,52 +1,63 @@
-.mainBanner {
-    height: 5.3rem;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    padding: 0.7rem 1rem;
+header {
     color: white;
-    text-align: center;
-    font-size: 0.5rem;
-    font-weight: bold;
-    font-family: 'Major Mono Display', monospace;
-    background-color: #7f53ac;
-    background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
-}
-
-.mainBanner svg:hover {
-    cursor: pointer;
-}
-
-.mainBanner ul {
+    height: 10rem;
+    width: 100vw;
+    background-image: url("../../assets/header_bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+}
+
+header p {
+    font-size: 0.7rem;
+    opacity: 1;
+}
+
+.left-panel {
+    padding: 1rem;
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    gap: 1.2rem;
+    z-index: 5;
+    border-bottom: 0.14rem solid sandybrown;
+}
+
+.black-overlay {
+    position: absolute;
+    right: 0;
+    width: 40vw;
+    height: 10rem;
+    background-color: black;
+    opacity: 0.4;
+    z-index: 0;
+}
+
+.right-panel {
+    padding: 0.5rem;
+    width: 40vw;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: space-around;
+}
+
+.right-panel-item {
+    overflow: hidden;
+    overflow-wrap: break-word;
+    padding: 0.3rem;
+    text-align: right;
+}
+
+.right-panel-item p {
+    font-size: 0.6rem;
+}
+
+.right-panel-summary {
     width: 100%;
-
-}
-
-.mainBanner ul li {
-    display: block;
-    font-size: larger;
-    padding-bottom: 1rem;
-}
-
-.mainBanner .active {
-    border-bottom: 1px solid white;
-}
-
-.hidden menu {
-    width: 100vw;
-    height: 100vh;
-    background-color: #7f53ac;
-    background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
-    position: sticky;
-    top: -100%;
-    transition: 0.5s;
-}
-
-.expandedMenu {
-    top: 0;
 }
