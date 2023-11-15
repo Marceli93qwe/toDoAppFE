@@ -1,3 +1,4 @@
+import AdditionButton from "../AdditionButton";
 import { Categories } from "./CategoriesSection/Categories";
 import "./main.css"
 import { TaskList } from "./TasksSection/TaskList";

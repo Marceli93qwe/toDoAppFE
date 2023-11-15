@@ -1,0 +1,20 @@
+body,
+html,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Major Mono Display', monospace;
+}
+
+#root {
+    height: 100vh;
+}
+
+.main-addition-button {
+    color: #402a23;
+    position: sticky;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

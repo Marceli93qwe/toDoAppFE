@@ -5,7 +5,7 @@ export const Categories = () => {
     return (
         <>
             <SectionLabel>Categories</SectionLabel>
-            <Row style={{ overflowX: "scroll", whiteSpace: "nowrap", gap: "1rem", padding: " 1rem" }}>
+            <Row style={{ overflowX: "scroll", whiteSpace: "nowrap", gap: "1rem", padding: "0.7rem 1rem" }}>
                 <CategoryBox />
                 <CategoryBox />
                 <CategoryBox />
