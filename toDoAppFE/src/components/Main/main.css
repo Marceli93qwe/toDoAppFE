@@ -1,5 +1,6 @@
 main {
-    padding: 1rem;
+    box-sizing: border-box !important;
+    padding-bottom: 1rem;
 }
 
 .category-box {
@@ -31,10 +32,47 @@ main {
 
 .progress {
     height: 5px;
-    width: 50%; /* Początkowa szerokość paska postępu (50%) */
+    width: 50%;
+    /* Początkowa szerokość paska postępu (50%) */
     background-color: sandybrown;
     border-radius: 5px;
     text-align: center;
     line-height: 30px;
     color: white;
+}
+
+.task-list {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+    padding-top: 0.5rem;
+}
+
+.single-task {
+    padding: 0.3rem;
+    height: 2rem;
+    width: 90vw;
+    border-radius: 0.5rem;
+    margin-left: 1rem;
+    border: 1px solid grey;
+}
+
+.single-task p {
+    max-width: 70%;
+    font-family: 'Ubuntu Mono', monospace;
+    overflow: auto;
+}
+
+.date-label {
+    font-family: "Ubuntu Mono", monospace;
+    padding: 0.1rem;
+    font-size: 0.5rem;
+    font-weight: bolder;
+    width: 3rem;
+    border: 1px solid #1640D6;
+    color: #1640D6;
+    border-radius: 0.2rem;
+    text-align: center;
 }
