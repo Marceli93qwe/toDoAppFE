@@ -1,6 +1,6 @@
 import { faCircle } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Row } from "../common/Row";
+import { Row } from "../../common/Row";
 
 export const SingleTask = () => {
     return (
