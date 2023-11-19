@@ -3,7 +3,7 @@ import { Header } from "./Header/Header";
 import { Main } from "./Main/Main";
 import { AdditionButton } from "./AdditionButton"
 
-function App() {
+export function App() {
 
     return (
         <>
@@ -15,4 +15,3 @@ function App() {
     )
 }
 
-export default App

@@ -1,13 +1,13 @@
-import AdditionButton from "../AdditionButton";
-import { Categories } from "./CategoriesSection/Categories";
+import { Bookmarks } from "./BookmarksSection/Bookmarks";
+import { TasksSection } from "./TasksSection/TasksSection";
 import "./main.css"
-import { TaskList } from "./TasksSection/TaskList";
 
 export const Main = () => {
+
     return (
         <main>
-            <Categories />
-            <TaskList />
+            <Bookmarks />
+            <TasksSection />
         </main>
     )
 }

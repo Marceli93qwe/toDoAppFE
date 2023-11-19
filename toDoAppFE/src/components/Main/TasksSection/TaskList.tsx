@@ -1,15 +1,21 @@
 import { SectionLabel } from "../../common/SectionLabel";
 import { SingleTask } from "./SingleTask";
 
-export function TaskList() {
+
+interface Props {
+    listName: string;
+    tasks: { taskName: string, active: boolean }[];
+}
+export function TaskList({ listName, tasks }: Props) {
     return (
         <>
-            <SectionLabel>Current Tasks</SectionLabel>
+            <SectionLabel>{listName}</SectionLabel>
             <ul className="task-list">
-                <SingleTask></SingleTask>
-                <SingleTask></SingleTask>
-                <SingleTask></SingleTask>
-                <SingleTask></SingleTask>
+                {
+                    tasks.map((task, index) => (
+                        <SingleTask key={index} taskName={task.taskName} active={task.active} />
+                    ))
+                }
             </ul>
         </>
     );
