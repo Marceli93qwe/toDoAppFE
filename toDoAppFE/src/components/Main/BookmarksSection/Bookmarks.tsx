@@ -1,22 +1,11 @@
 import {SectionLabel} from "../../common/SectionLabel";
 import {Row} from "../../common/Row";
 import {BookmarkBox} from "./BookmarkBox";
-import {useEffect, useState} from "react";
-import {BookmarkRecord} from "../../../types/BookmarkRecord";
-import {getBookmarks} from "../../../utils/DataGetter";
+import {useContext} from "react";
+import {BookmarkContext} from "../../../contexts/bookmarkContext.tsx";
 
 export const Bookmarks = () => {
-    const [bookmarks, setBookmarks] = useState<BookmarkRecord[] | null>(null);
-    const [chosenBookmarkId, setChosenBookmarkId] = useState<string | null>(null);
-    useEffect(() => {
-        console.log(chosenBookmarkId)
-    }, [chosenBookmarkId]);
-    // FETCH USER'S BOOKMARKS FROM DATABASE
-    useEffect(() => {
-        (async () => {
-            setBookmarks(await getBookmarks());
-        })()
-    }, [])
+    const {bookmarks, setChosenBookmark} = useContext(BookmarkContext);
     return (
         <>
             <SectionLabel>Bookmarks</SectionLabel>
@@ -29,7 +18,7 @@ export const Bookmarks = () => {
                         key={index}
                         bookmarkName={bookmarkName}
                         tasksAmount={26}
-                        setBookmark={() => setChosenBookmarkId(bookmarkId)}
+                        setBookmark={() => setChosenBookmark(bookmarkId)}
                     />
                 ))}
             </Row>
