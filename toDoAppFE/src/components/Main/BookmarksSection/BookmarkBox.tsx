@@ -1,12 +1,14 @@
+import {MouseEventHandler} from "react";
 
 interface Props {
     bookmarkName: string;
     tasksAmount: number;
+    setBookmark: MouseEventHandler;
 }
 
-export const BookmarkBox = ({ bookmarkName, tasksAmount }: Props) => {
+export const BookmarkBox = ({bookmarkName, tasksAmount, setBookmark}: Props) => {
     return (
-        <div className={"bookmark-box"}>
+        <div className={"bookmark-box"} onClick={setBookmark}>
             <p>{tasksAmount} tasks</p>
             <h5>{bookmarkName}</h5>
             <div className={"progress-bar"}>
