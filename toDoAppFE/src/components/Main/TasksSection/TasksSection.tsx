@@ -15,6 +15,9 @@ export const TasksSection = () => {
     }, [chosenBookmarkId]);
     // FETCHING DATA FROM OUR BE SERVER
     return (
-        <TaskList listName="Current tasks" tasks={tasks}></TaskList>
+        <>
+            <TaskList listName="Current tasks" tasks={tasks}></TaskList>
+            <TaskList listName={"Completed"} tasks={tasks}></TaskList>
+        </>
     );
 }
