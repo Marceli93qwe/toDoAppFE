@@ -1,7 +1,7 @@
 import {faCirclePlus, faCircleXmark} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useContext} from "react";
-import {BookmarkContext} from "../contexts/bookmarkContext.tsx";
+import {BookmarkContext} from "../../contexts/bookmarkContext.tsx";
 
 export const AdditionButton = () => {
     const {formActive, setFormActive} = useContext(BookmarkContext);
