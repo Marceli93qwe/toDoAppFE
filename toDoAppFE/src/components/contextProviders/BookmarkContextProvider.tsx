@@ -2,6 +2,7 @@ import {ReactNode, useEffect, useState} from "react";
 import {BookmarkRecord} from "../../types/BookmarkRecord.ts";
 import {getBookmarks} from "../../utils/DataGetter.ts";
 import {BookmarkContext} from "../../contexts/bookmarkContext.tsx";
+import {toggleScreenLock} from "../../utils/styleFunctions.ts";
 
 interface Props {
     children: ReactNode;
@@ -10,6 +11,7 @@ interface Props {
 export const BookmarkContextProvider = ({children}: Props) => {
     const [bookmarks, setBookmarks] = useState<BookmarkRecord[] | null>(null);
     const [chosenBookmarkId, setChosenBookmarkId] = useState<string | null>(null);
+    const [formActive, setFormActive] = useState(false);
     // FETCH USER'S BOOKMARKS FROM DATABASE
     useEffect(() => {
         (async () => {
@@ -21,10 +23,21 @@ export const BookmarkContextProvider = ({children}: Props) => {
         console.log(id);
         setChosenBookmarkId(id);
     }
-
+    // HANDLER FOR A SHOW ADDITION FORM ACTION - WITHOUT IT, TYPES IN BookmarkContext will block the program
+    const handleFormActiveChange = () => {
+        setFormActive(active => !active);
+        // TOGGLE SCREEN LOCK
+        toggleScreenLock(!formActive);
+    }
     return (
         <>
-            <BookmarkContext.Provider value={{bookmarks, chosenBookmarkId, setChosenBookmark: handleBookmarkChoice}}>
+            <BookmarkContext.Provider value={{
+                bookmarks,
+                chosenBookmarkId,
+                setChosenBookmark: handleBookmarkChoice,
+                formActive,
+                setFormActive: handleFormActiveChange,
+            }}>
                 {children}
             </BookmarkContext.Provider>
         </>

@@ -1,4 +1,5 @@
 header {
+    position: relative;
     color: white;
     height: 10rem;
     width: 100vw;
@@ -8,6 +9,7 @@ header {
     background-repeat: no-repeat;
     display: flex;
     flex-direction: row;
+    z-index: 20;
 }
 
 header p {
