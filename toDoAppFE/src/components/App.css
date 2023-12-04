@@ -11,10 +11,3 @@ html,
     height: 100vh;
 }
 
-.main-addition-button {
-    color: #402a23;
-    position: sticky;
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}

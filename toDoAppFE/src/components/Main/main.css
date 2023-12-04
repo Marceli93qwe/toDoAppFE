@@ -3,6 +3,10 @@ main {
     padding-bottom: 1rem;
 }
 
+/*BOOKMARK*/
+/*BOOKMARK*/
+/*BOOKMARK*/
+
 .bookmark-box {
 
     overflow: scroll;
@@ -45,6 +49,14 @@ main {
     color: white;
 }
 
+/*TASKS*/
+/*TASKS*/
+/*TASKS*/
+
+.task-lists-wrapper {
+    padding-bottom: 3.5rem;
+}
+
 .task-list {
     width: 100vw;
     display: flex;
@@ -83,4 +95,28 @@ main {
     color: #1640D6;
     border-radius: 0.2rem;
     text-align: center;
+}
+
+/*TASK-ADDITION-FORM*/
+/*TASK-ADDITION-FORM*/
+/*TASK-ADDITION-FORM*/
+
+.main-addition-button {
+    color: #402a23;
+    position: fixed;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -120%);
+}
+
+.blur-container {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: -100%;
+}
+
+.task-addition-form {
+    height: 60vh;
+    width: 70vw;
 }
