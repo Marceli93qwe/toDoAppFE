@@ -101,22 +101,48 @@ main {
 /*TASK-ADDITION-FORM*/
 /*TASK-ADDITION-FORM*/
 
+
+.form-active {
+    top: 10rem;
+}
+
+.form-disabled {
+    top: -100%;
+}
+
 .main-addition-button {
     color: #402a23;
     position: fixed;
     top: 100%;
     left: 50%;
     transform: translate(-50%, -120%);
+    /*z-index: 10;*/
 }
 
 .blur-container {
-    height: 100vh;
+    height: calc(100vh - 10rem);
     width: 100vw;
     position: absolute;
-    top: -100%;
+    background: white;
+    transition: 0.2s ease-out;
 }
 
 .task-addition-form {
+    padding: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
     height: 60vh;
-    width: 70vw;
+    width: 100vw;
 }
+
+.input-box {
+    width: 100%;
+}
+
+.input-box input {
+    display: block;
+    margin-left: 1rem;
+}
+
