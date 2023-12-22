@@ -3,6 +3,7 @@ import {useContext, useEffect, useState} from "react";
 import {TaskRecord} from "../../../types/TaskRecord.ts";
 import {BookmarkContext} from "../../../contexts/bookmarkContext.tsx";
 import {getTasksFromBookmark} from "../../../utils/DataGetter.ts";
+import AdditionButton from "../../AdditionButton.tsx";
 
 export const TasksSection = () => {
     const [tasks, setTasks] = useState<TaskRecord[]>([])
@@ -15,6 +16,12 @@ export const TasksSection = () => {
     }, [chosenBookmarkId]);
     // FETCHING DATA FROM OUR BE SERVER
     return (
-        <TaskList listName="Current tasks" tasks={tasks}></TaskList>
+        <>
+            <div className={"task-lists-wrapper"}>
+                <TaskList listName="Current tasks" tasks={tasks}></TaskList>
+                <TaskList listName={"Completed"} tasks={tasks}></TaskList>
+            </div>
+            <AdditionButton/>
+        </>
     );
 }

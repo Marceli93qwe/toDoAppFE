@@ -1,15 +1,14 @@
 import './App.css'
-import { Header } from "./Header/Header";
-import { Main } from "./Main/Main";
-import { AdditionButton } from "./AdditionButton"
+import {Header} from "./Header/Header";
+import {Main} from "./Main/Main";
 
 export function App() {
 
     return (
         <>
-            <Header />
-            <Main />
-            <AdditionButton />
+            <Header/>
+            <Main/>
+
 
         </>
     )
