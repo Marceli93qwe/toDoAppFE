@@ -13,6 +13,7 @@ export const TaskAdditionForm = () => {
                 <InputBox/>
                 <InputBox/>
                 <InputBox/>
+                <InputBox/>
             </form>
         </div>
     )
