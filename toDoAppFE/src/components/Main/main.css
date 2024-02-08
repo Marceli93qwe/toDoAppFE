@@ -146,3 +146,13 @@ main {
     margin-left: 1rem;
 }
 
+.input-box input[type="date"] {
+    width: 85%;
+}
+
+.input-box input[type="color"] {
+    width: 85%;
+    height: 2rem;
+    border: 1px solid black;
+    outline: none;
+}
