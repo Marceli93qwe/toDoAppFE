@@ -12,6 +12,7 @@ export const BookmarkContextProvider = ({children}: Props) => {
     const [bookmarks, setBookmarks] = useState<BookmarkRecord[] | null>(null);
     const [chosenBookmarkId, setChosenBookmarkId] = useState<string | null>(null);
     const [formActive, setFormActive] = useState(false);
+    const [bookmarkFormActive, setBookmarkFormActive] = useState(false);
     // FETCH USER'S BOOKMARKS FROM DATABASE
     useEffect(() => {
         (async () => {
@@ -29,6 +30,12 @@ export const BookmarkContextProvider = ({children}: Props) => {
         // TOGGLE SCREEN LOCK
         toggleScreenLock(!formActive);
     }
+
+    const handleBookmarkFormActiveChange = () => {
+        setBookmarkFormActive(bookmarkFormActive => !bookmarkFormActive);
+        // TOGGLE SCREEN LOCK
+        toggleScreenLock(!bookmarkFormActive);
+    }
     return (
         <>
             <BookmarkContext.Provider value={{
@@ -37,6 +44,8 @@ export const BookmarkContextProvider = ({children}: Props) => {
                 setChosenBookmark: handleBookmarkChoice,
                 formActive,
                 setFormActive: handleFormActiveChange,
+                bookmarkFormActive,
+                setBookmarkFormActive: handleBookmarkFormActiveChange
             }}>
                 {children}
             </BookmarkContext.Provider>

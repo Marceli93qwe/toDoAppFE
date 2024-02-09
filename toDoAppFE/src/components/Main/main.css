@@ -49,6 +49,38 @@ main {
     color: white;
 }
 
+.add-bookmark-button {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+    background-color: sandybrown;
+}
+
+
+.add-bookmark-form-container {
+    z-index: 12;
+}
+
+.add-bookmark-form {
+    padding: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    height: 60vh;
+    width: 100vw;
+}
+
+.bookmark-addition-button {
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -120%);
+
+}
+
 /*TASKS*/
 /*TASKS*/
 /*TASKS*/
@@ -102,11 +134,11 @@ main {
 /*TASK-ADDITION-FORM*/
 
 
-.form-active {
+.form-active, .bookmark-form-active {
     top: 10rem;
 }
 
-.form-disabled {
+.form-disabled, .bookmark-form-disabled {
     top: -100%;
 }
 
@@ -116,10 +148,10 @@ main {
     top: 100%;
     left: 50%;
     transform: translate(-50%, -120%);
-    /*z-index: 10;*/
+    z-index: 10;
 }
 
-.blur-container {
+.blur-container, .add-bookmark-form-container {
     height: calc(100vh - 10rem);
     width: 100vw;
     position: absolute;

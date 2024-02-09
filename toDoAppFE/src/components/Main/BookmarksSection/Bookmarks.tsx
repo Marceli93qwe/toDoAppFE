@@ -3,6 +3,7 @@ import {Row} from "../../common/Row";
 import {BookmarkBox} from "./BookmarkBox";
 import {useContext} from "react";
 import {BookmarkContext} from "../../../contexts/bookmarkContext.tsx";
+import {AddBookmarkButton} from "./AddBookmarkButton.tsx";
 
 export const Bookmarks = () => {
     const {bookmarks, setChosenBookmark} = useContext(BookmarkContext);
@@ -21,6 +22,7 @@ export const Bookmarks = () => {
                         setBookmark={() => setChosenBookmark(bookmarkId)}
                     />
                 ))}
+                <AddBookmarkButton/>
             </Row>
         </>
     );

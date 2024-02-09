@@ -7,10 +7,14 @@ export const BookmarkContext = createContext<{
     setChosenBookmark: (id: string) => void,
     formActive: boolean,
     setFormActive: () => void,
+    bookmarkFormActive: boolean,
+    setBookmarkFormActive: () => void,
 }>({
     bookmarks: [],
     chosenBookmarkId: "",
     setChosenBookmark: () => undefined,
     formActive: false,
     setFormActive: () => undefined,
+    bookmarkFormActive: false,
+    setBookmarkFormActive: () => undefined,
 });
