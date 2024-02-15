@@ -28,7 +28,15 @@ export const TaskAdditionForm = () => {
                     "Content-Type": "application/json",
                     "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEzZDYwNTc4LWM2ZWEtNDlkNC1hNTZiLTI3YjY1OTZjYmU1NyIsImlhdCI6MTcwNjc4ODkxM30.w0hFeHXasU4TDF_F8oJ88dbzMGj69hthSceCsQCT6S4`,
                 },
-                body: JSON.stringify({taskName: formState.taskName})
+                body: JSON.stringify(
+                    {
+                        taskName: formState.taskName,
+                        description: formState.description,
+                        deadlineDate: formState.deadlineDate,
+                        priority: formState.priority,
+                        color: formState.color,
+                    }
+                )
             }
         )
         console.log(response);
