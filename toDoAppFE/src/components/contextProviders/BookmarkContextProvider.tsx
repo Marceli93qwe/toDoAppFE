@@ -11,6 +11,7 @@ interface Props {
 export const BookmarkContextProvider = ({children}: Props) => {
     const [bookmarks, setBookmarks] = useState<BookmarkRecord[] | null>(null);
     const [chosenBookmarkId, setChosenBookmarkId] = useState<string | null>(null);
+    const [chosenBookmarkName, setChosenBookmarkName] = useState<string | null>(null);
     const [formActive, setFormActive] = useState(false);
     const [bookmarkFormActive, setBookmarkFormActive] = useState(false);
     // FETCH USER'S BOOKMARKS FROM DATABASE
@@ -20,9 +21,10 @@ export const BookmarkContextProvider = ({children}: Props) => {
         })()
     }, [])
     // HANDLER FOR A BOOKMARK CHOICE ACTION - WITHOUT IT, TYPES IN BookmarkContext will block the program.
-    const handleBookmarkChoice = (id: string) => {
-        console.log(id);
+    const handleBookmarkChoice = (id: string, name: string) => {
+        console.log(id, name);
         setChosenBookmarkId(id);
+        setChosenBookmarkName(name)
     }
     // HANDLER FOR A SHOW ADDITION FORM ACTION - WITHOUT IT, TYPES IN BookmarkContext will block the program
     const handleFormActiveChange = () => {
@@ -41,6 +43,7 @@ export const BookmarkContextProvider = ({children}: Props) => {
             <BookmarkContext.Provider value={{
                 bookmarks,
                 chosenBookmarkId,
+                chosenBookmarkName,
                 setChosenBookmark: handleBookmarkChoice,
                 formActive,
                 setFormActive: handleFormActiveChange,

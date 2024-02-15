@@ -19,7 +19,7 @@ export const Bookmarks = () => {
                         key={index}
                         bookmarkName={bookmarkName}
                         tasksAmount={26}
-                        setBookmark={() => setChosenBookmark(bookmarkId)}
+                        setBookmark={() => setChosenBookmark(bookmarkId, bookmarkName)}
                     />
                 ))}
                 <AddBookmarkButton/>

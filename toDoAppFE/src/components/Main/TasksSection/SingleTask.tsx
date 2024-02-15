@@ -17,7 +17,7 @@ export const SingleTask = ({taskName, active, deadlineDate, description}: Props)
         <div className="single-task">
             <Row style={{justifyContent: "space-between"}}>
                 <Row style={{gap: 5, color: ""}}>
-                    <FontAwesomeIcon icon={active ? faCircle : faCircleCheck} size="xs"/>
+                    <FontAwesomeIcon icon={!active ? faCircle : faCircleCheck} size="xs"/>
                     <p>{taskName}</p>
                     {description}
                 </Row>
