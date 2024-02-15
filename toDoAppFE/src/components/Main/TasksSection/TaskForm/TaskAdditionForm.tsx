@@ -21,6 +21,7 @@ export const TaskAdditionForm = () => {
         });
     }
 
+
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         await fetch(`http://localhost:3001/users/bookmarks/${chosenBookmarkId}/tasks`, {
@@ -49,7 +50,8 @@ export const TaskAdditionForm = () => {
         <div className={`blur-container ${formActive ? "form-active" : "form-disabled"}`}>
             <form onSubmit={handleSubmit} className={"task-addition-form"}>
                 <h3>add new task</h3>
-                <InputBox change={handleInputChange} label={"Task Name"} name={"taskName"} value={formState.taskName}
+                <InputBox maxLength={35} change={handleInputChange} label={"Task Name"} name={"taskName"}
+                          value={formState.taskName}
                           type={"text"}/>
                 <InputBox change={handleInputChange} label={"Description"} name={"description"}
                           value={formState.description} type={"text"}/>

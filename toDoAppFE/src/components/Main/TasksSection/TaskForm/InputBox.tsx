@@ -7,11 +7,12 @@ interface Props {
     label?: string;
     type?: "text" | "date" | "number" | "color" | "submit";
     value?: string | number;
+    maxLength?: number;
 }
 
-export const InputBox = ({name, label, type, value, change}: Props) => {
+export const InputBox = ({name, label, type, value, change, maxLength}: Props) => {
     return <div className={"input-box"}>
         <SectionLabel>{label}</SectionLabel>
-        <input name={name} type={`${type}`} value={value} onChange={change}/>
+        <input maxLength={maxLength} name={name} type={`${type}`} value={value} onChange={change}/>
     </div>
 }
