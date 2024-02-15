@@ -16,8 +16,13 @@ export function TaskList({listName, tasks}: Props) {
             <ul className="task-list">
                 {
                     tasks.map((task, index) => (
-                        <SingleTask key={index} taskName={task.taskName} active={task.active}
-                                    description={task.description} deadlineDate={task.deadlineDate} priority={1}/>
+                        <SingleTask
+                            key={index}
+                            taskName={task.taskName}
+                            active={task.active}
+                            description={task.description}
+                            deadlineDate={task.deadlineDate}
+                        />
                     ))
                 }
             </ul>
