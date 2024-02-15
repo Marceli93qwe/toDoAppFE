@@ -9,16 +9,17 @@ export const TasksSection = () => {
     const {chosenBookmarkId} = useContext(BookmarkContext);
     useEffect(() => {
         (async () => {
+            // FETCHING DATA FROM OUR BE SERVER
             setTasks(await getTasksFromBookmark(chosenBookmarkId))
             // console.log(await getTasksFromBookmark(chosenBookmarkId));
         })()
     }, [chosenBookmarkId]);
-    // FETCHING DATA FROM OUR BE SERVER
+
     return (
         <>
             <div className={"task-lists-wrapper"}>
-                <TaskList listName="Current tasks" tasks={tasks}></TaskList>
-                <TaskList listName={"Completed"} tasks={tasks}></TaskList>
+                <TaskList listName="Current tasks" tasks={tasks.filter(task => !task.active)}></TaskList>
+                <TaskList listName={"Completed"} tasks={tasks.filter(task => task.active)}></TaskList>
             </div>
         </>
     );

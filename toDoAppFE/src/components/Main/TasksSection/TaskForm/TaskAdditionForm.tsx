@@ -1,6 +1,7 @@
 import {ChangeEvent, FormEvent, useContext, useState} from "react";
 import {BookmarkContext} from "../../../../contexts/bookmarkContext.tsx";
 import {InputBox} from "./InputBox.tsx";
+import {reload} from "../../../../utils/reloader.ts";
 
 export const TaskAdditionForm = () => {
     const {formActive, chosenBookmarkId} = useContext(BookmarkContext);
@@ -22,7 +23,7 @@ export const TaskAdditionForm = () => {
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const response = await fetch(`http://localhost:3001/users/bookmarks/${chosenBookmarkId}/tasks`, {
+        await fetch(`http://localhost:3001/users/bookmarks/${chosenBookmarkId}/tasks`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -35,11 +36,12 @@ export const TaskAdditionForm = () => {
                         deadlineDate: formState.deadlineDate,
                         priority: formState.priority,
                         color: formState.color,
+                        active: false,
                     }
                 )
             }
         )
-        console.log(response);
+        reload();
     }
 
     return (
