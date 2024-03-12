@@ -144,5 +144,6 @@ main {
 .input-box input {
     display: block;
     margin-left: 1rem;
+    width: 90%;
 }
 
