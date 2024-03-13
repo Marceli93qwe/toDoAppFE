@@ -24,7 +24,7 @@ export const TaskAdditionForm = () => {
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        await fetch(`http://localhost:3001/users/bookmarks/${chosenBookmarkId}/tasks`, {
+        await fetch(`http://192.168.31.115:3001/users/bookmarks/${chosenBookmarkId}/tasks`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
