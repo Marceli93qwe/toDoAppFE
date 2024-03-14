@@ -24,7 +24,8 @@ export const BookmarkContextProvider = ({children}: Props) => {
     const handleBookmarkChoice = (id: string, name: string) => {
         console.log(id, name);
         setChosenBookmarkId(id);
-        setChosenBookmarkName(name)
+        setChosenBookmarkName(name);
+        localStorage.setItem("chosenBookmark", JSON.stringify({id, bookmarkName: name}))
     }
     // HANDLER FOR A SHOW ADDITION FORM ACTION - WITHOUT IT, TYPES IN BookmarkContext will block the program
     const handleFormActiveChange = () => {
