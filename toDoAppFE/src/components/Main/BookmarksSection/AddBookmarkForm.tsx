@@ -11,7 +11,6 @@ export const AddBookmarkForm = () => {
 
     const handleBookmarkFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log("works")
         await fetch("http://192.168.31.115:3001/users/bookmarks", {
             method: "POST",
             headers: {

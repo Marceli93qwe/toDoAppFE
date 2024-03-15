@@ -5,7 +5,7 @@ import {TaskRecord} from "../../../types/TaskRecord.ts";
 
 interface Props {
     listName: string;
-    tasks: TaskRecord[];
+    tasks: TaskRecord[] | null;
 }
 
 export function TaskList({listName, tasks}: Props) {
@@ -15,7 +15,7 @@ export function TaskList({listName, tasks}: Props) {
             <SectionLabel>{listName}</SectionLabel>
             <ul className="task-list">
                 {
-                    tasks.map((task, index) => (
+                    tasks && tasks.map((task, index) => (
                         <SingleTask
                             key={index}
                             taskName={task.taskName}

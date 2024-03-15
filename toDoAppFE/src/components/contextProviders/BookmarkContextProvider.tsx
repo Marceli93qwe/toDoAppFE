@@ -1,14 +1,16 @@
 import {ReactNode, useEffect, useState} from "react";
 import {BookmarkRecord} from "../../types/BookmarkRecord.ts";
-import {getBookmarks} from "../../utils/DataGetter.ts";
+import {getAllUsersTasks, getBookmarks} from "../../utils/DataGetter.ts";
 import {BookmarkContext} from "../../contexts/bookmarkContext.tsx";
 import {toggleScreenLock} from "../../utils/styleFunctions.ts";
+import {TaskRecord} from "../../types/TaskRecord.ts";
 
 interface Props {
     children: ReactNode;
 }
 
 export const BookmarkContextProvider = ({children}: Props) => {
+    const [allUsersTasks, setAllUsersTasks] = useState<TaskRecord[] | null>(null);
     const [bookmarks, setBookmarks] = useState<BookmarkRecord[] | null>(null);
     const [chosenBookmarkId, setChosenBookmarkId] = useState<string | null>(null);
     const [chosenBookmarkName, setChosenBookmarkName] = useState<string | null>(null);
@@ -17,12 +19,14 @@ export const BookmarkContextProvider = ({children}: Props) => {
     // FETCH USER'S BOOKMARKS FROM DATABASE
     useEffect(() => {
         (async () => {
+            const alltasks = await getAllUsersTasks();
+            console.log(alltasks)
+            setAllUsersTasks(alltasks);
             setBookmarks(await getBookmarks());
         })()
     }, [])
     // HANDLER FOR A BOOKMARK CHOICE ACTION - WITHOUT IT, TYPES IN BookmarkContext will block the program.
     const handleBookmarkChoice = (id: string, name: string) => {
-        console.log(id, name);
         setChosenBookmarkId(id);
         setChosenBookmarkName(name);
         localStorage.setItem("chosenBookmark", JSON.stringify({id, bookmarkName: name}))
@@ -42,6 +46,7 @@ export const BookmarkContextProvider = ({children}: Props) => {
     return (
         <>
             <BookmarkContext.Provider value={{
+                allUsersTasks,
                 bookmarks,
                 chosenBookmarkId,
                 chosenBookmarkName,
