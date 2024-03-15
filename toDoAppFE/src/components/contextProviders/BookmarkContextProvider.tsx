@@ -19,9 +19,7 @@ export const BookmarkContextProvider = ({children}: Props) => {
     // FETCH USER'S BOOKMARKS FROM DATABASE
     useEffect(() => {
         (async () => {
-            const alltasks = await getAllUsersTasks();
-            console.log(alltasks)
-            setAllUsersTasks(alltasks);
+            setAllUsersTasks(await getAllUsersTasks());
             setBookmarks(await getBookmarks());
         })()
     }, [])
