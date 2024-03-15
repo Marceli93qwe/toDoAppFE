@@ -5,9 +5,10 @@ import {useContext, useEffect} from "react";
 import {BookmarkContext} from "../../../contexts/bookmarkContext.tsx";
 import {AddBookmarkButton} from "./AddBookmarkButton.tsx";
 import {BookmarkRecord} from "../../../types/BookmarkRecord.ts";
+import {countBookmarkTasks} from "../../../utils/tasksInfo.ts";
 
 export const Bookmarks = () => {
-    const {bookmarks, setChosenBookmark} = useContext(BookmarkContext);
+    const {bookmarks, setChosenBookmark, allUsersTasks} = useContext(BookmarkContext);
 
     useEffect(() => {
         const bookmarkFromStorage = JSON.parse(localStorage.getItem("chosenBookmark") as string) as BookmarkRecord;
@@ -29,7 +30,7 @@ export const Bookmarks = () => {
                     <BookmarkBox
                         key={index}
                         bookmarkName={bookmarkName}
-                        tasksAmount={26}
+                        tasksAmount={Number(countBookmarkTasks(allUsersTasks, bookmarkId))}
                         setBookmark={() => setChosenBookmark(bookmarkId, bookmarkName)}
                     />
                 ))}

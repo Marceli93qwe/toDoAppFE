@@ -6,3 +6,7 @@ export const filterTasksByBookmarkId = (tasks: TaskRecord[] | null, chosenBookma
     );
     return null
 }
+
+export const countBookmarkTasks = ( tasks: TaskRecord[] | null,bookmarkId: string | null) => {
+return filterTasksByBookmarkId(tasks, bookmarkId)?.length;
+}
