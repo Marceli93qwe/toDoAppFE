@@ -15,9 +15,10 @@ export function TaskList({listName, tasks}: Props) {
             <SectionLabel>{listName}</SectionLabel>
             <ul className="task-list">
                 {
-                    tasks && tasks.map((task, index) => (
+                    tasks && tasks.map((task) => (
                         <SingleTask
-                            key={index}
+                            id={task.id}
+                            key={task.id}
                             taskName={task.taskName}
                             active={task.active}
                             description={task.description}

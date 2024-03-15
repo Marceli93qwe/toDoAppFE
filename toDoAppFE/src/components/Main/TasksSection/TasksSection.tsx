@@ -7,7 +7,7 @@ import {filterTasksByBookmarkId} from "../../../utils/tasksInfo.ts";
 
 export const TasksSection = () => {
     const {chosenBookmarkId, chosenBookmarkName, allUsersTasks} = useContext(BookmarkContext);
-    const [tasks, setTasks] = useState<TaskRecord[]| null>([]);
+    const [tasks, setTasks] = useState<TaskRecord[] | null>([]);
     useEffect(() => {
         setTasks(filterTasksByBookmarkId(allUsersTasks, chosenBookmarkId));
     }, [allUsersTasks, chosenBookmarkId]);
