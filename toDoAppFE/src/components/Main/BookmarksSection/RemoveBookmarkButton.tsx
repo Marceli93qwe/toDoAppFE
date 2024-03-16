@@ -5,7 +5,16 @@ import {BookmarkContext} from "../../../contexts/bookmarkContext.tsx";
 export const RemoveBookmarkButton = () => {
     const {chosenBookmarkId} = useContext(BookmarkContext)
     return (
-        <button onClick={() => removeBookmark(chosenBookmarkId)} className={"remove-bookmark-button"}>remove
-            bookmark</button>
+        <button
+            onClick={() => removeBookmark(chosenBookmarkId)}
+            className={"remove-bookmark-button"}
+            style={
+                {
+                    display: chosenBookmarkId ? "block" : "none"
+                }
+            }
+        >
+            remove bookmark
+        </button>
     )
 }

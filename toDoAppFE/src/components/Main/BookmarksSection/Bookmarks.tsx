@@ -4,20 +4,19 @@ import {BookmarkBox} from "./BookmarkBox";
 import {useContext, useEffect} from "react";
 import {BookmarkContext} from "../../../contexts/bookmarkContext.tsx";
 import {AddBookmarkButton} from "./AddBookmarkButton.tsx";
-import {BookmarkRecord} from "../../../types/BookmarkRecord.ts";
-import {countBookmarkTasks} from "../../../utils/tasksInfo.ts";
+import {countBookmarkTasks, getChosenBookmarkFromStorage} from "../../../utils/tasksInfo.ts";
 
 export const Bookmarks = () => {
     const {bookmarks, setChosenBookmark, allUsersTasks} = useContext(BookmarkContext);
 
     useEffect(() => {
-        const bookmarkFromStorage = JSON.parse(localStorage.getItem("chosenBookmark") as string) as BookmarkRecord;
+        const bookmarkFromStorage = getChosenBookmarkFromStorage();
         if (bookmarkFromStorage) {
             const {bookmarkName, id} = bookmarkFromStorage;
             return setChosenBookmark(id, bookmarkName);
         }
-        if (bookmarks) setChosenBookmark(bookmarks[0].id, bookmarks[0].bookmarkName);
-    }, [])
+        if (bookmarks?.length) setChosenBookmark(bookmarks[0].id, bookmarks[0].bookmarkName);
+    }, [bookmarks])
 
     return (
         <>
