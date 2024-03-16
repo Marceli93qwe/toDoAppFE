@@ -24,6 +24,20 @@ export const getTasksFromBookmark = async (bookmarkId: string | null) => {
     return tasks;
 }
 
+export const removeBookmark = async (bookmarkId: string | null) => {
+    const response = await fetch(`http://192.168.31.115:3001/users/bookmarks/${bookmarkId}`,
+        {
+            method: "DELETE",
+            headers: {
+                Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEzZDYwNTc4LWM2ZWEtNDlkNC1hNTZiLTI3YjY1OTZjYmU1NyIsImlhdCI6MTcwNjc4ODkxM30.w0hFeHXasU4TDF_F8oJ88dbzMGj69hthSceCsQCT6S4`,
+            }
+        });
+    localStorage.setItem("chosenBookmark", JSON.stringify(null));
+
+    console.log(response);
+    reload();
+}
+
 export const removeTaskFromBookmark = async (bookmarkId: string | null, taskId: string | null) => {
     const response = await fetch(`http://192.168.31.115:3001/users/bookmarks/${bookmarkId}/tasks/${taskId}`, {
         method: "DELETE",

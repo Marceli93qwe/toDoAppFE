@@ -7,6 +7,22 @@ main {
 /*BOOKMARK*/
 /*BOOKMARK*/
 
+.remove-bookmark-button {
+    display: block;
+    border-radius: 5px;
+    color: red;
+    border: 1px solid red;
+    transition: .6s;
+    margin: 0.3rem 1rem;
+    padding: 0.2rem;
+    font-weight: bold;
+}
+
+.remove-bookmark-button:hover {
+    background: red;
+    color: white;
+}
+
 .bookmark-box {
 
     overflow: scroll;

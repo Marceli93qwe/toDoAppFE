@@ -4,6 +4,7 @@ import {TaskRecord} from "../../../types/TaskRecord.ts";
 import {BookmarkContext} from "../../../contexts/bookmarkContext.tsx";
 import {SectionLabel} from "../../common/SectionLabel.tsx";
 import {filterTasksByBookmarkId} from "../../../utils/tasksInfo.ts";
+import {RemoveBookmarkButton} from "../BookmarksSection/RemoveBookmarkButton.tsx";
 
 export const TasksSection = () => {
     const {chosenBookmarkId, chosenBookmarkName, allUsersTasks} = useContext(BookmarkContext);
@@ -16,6 +17,7 @@ export const TasksSection = () => {
         <>
             <div className={"task-lists-wrapper"}>
                 <SectionLabel>Chosen bookmark: {chosenBookmarkName}</SectionLabel>
+                <RemoveBookmarkButton/>
                 <TaskList listName="Current tasks" tasks={tasks && tasks.filter(task => !task.active)}></TaskList>
                 <TaskList listName={"Completed"} tasks={tasks && tasks.filter(task => task.active)}></TaskList>
             </div>
