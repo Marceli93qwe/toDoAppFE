@@ -3,6 +3,8 @@ import {Header} from "./Header/Header";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import {ProtectedRoute} from "../utils/ProtectedRoute.tsx";
 import {Main} from "./Main/Main.tsx";
+import {LoginPage} from "./LoginPage/LoginPage.tsx";
+import {Register} from "./LoginPage/Register.tsx";
 
 export function App() {
 
@@ -19,8 +21,8 @@ export function App() {
                         </ProtectedRoute>
                     }
                 />
-                <Route path={"/login"} element={<h2>login</h2>}/>
-
+                <Route path={"/login"} element={<LoginPage/>}/>
+                <Route path={"/register"} element={<Register/>}/>
             </Routes>
         </Router>
     )

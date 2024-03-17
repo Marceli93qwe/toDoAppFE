@@ -14,6 +14,10 @@ export const authenticateUser = async () => {
     return false;
 }
 
+
+export const setJWTtoStorage = (token: string) => {
+    localStorage.setItem("jwtTokenTimeManager", token);
+}
 export const getJWTFromStorage = () => {
     return localStorage.getItem("jwtTokenTimeManager")
 }

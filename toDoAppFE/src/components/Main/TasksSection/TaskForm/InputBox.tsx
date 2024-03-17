@@ -5,7 +5,7 @@ interface Props {
     change?: (e: ChangeEvent<HTMLInputElement>) => void
     name?: string;
     label?: string;
-    type?: "text" | "date" | "number" | "color" | "submit";
+    type?: "text" | "date" | "number" | "color" | "submit" | "password";
     value?: string | number;
     maxLength?: number;
 }
