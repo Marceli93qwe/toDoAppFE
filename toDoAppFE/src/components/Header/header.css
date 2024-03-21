@@ -40,7 +40,7 @@ header p {
 }
 
 .right-panel {
-    padding: 0.5rem;
+    padding: 1.1rem 0.5rem 0.3rem 0.5rem;
     width: 40vw;
     z-index: 2;
     display: flex;
