@@ -1,3 +1,5 @@
+import {reload} from "./reloader.ts";
+
 export const authenticateUser = async () => {
     const token = getJWTFromStorage();
     if (token) {
@@ -20,4 +22,9 @@ export const setJWTtoStorage = (token: string) => {
 }
 export const getJWTFromStorage = () => {
     return localStorage.getItem("jwtTokenTimeManager")
+}
+
+export const logOut = () => {
+    localStorage.setItem("jwtTokenTimeManager", JSON.stringify(null));
+    reload();
 }

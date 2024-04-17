@@ -9,6 +9,7 @@ import {
     faRightFromBracket
 } from "@fortawesome/free-solid-svg-icons";
 import {Row} from "../common/Row.tsx";
+import {logOut} from "../../utils/authenticateUser.ts";
 
 export const BottomPanel = () => {
 
@@ -20,7 +21,7 @@ export const BottomPanel = () => {
                 <Row style={{gap: "0.6rem"}}><FontAwesomeIcon icon={faPalette}/> theme</Row>
                 <Row style={{gap: "0.6rem"}}><FontAwesomeIcon icon={faCircleInfo}/> info</Row>
                 <Row style={{gap: "0.6rem"}}><FontAwesomeIcon icon={faEnvelope}/> contact</Row>
-                <Row style={{gap: "0.6rem"}}><FontAwesomeIcon icon={faRightFromBracket}/> logout</Row>
+                <Row click={logOut} style={{gap: "0.6rem"}}><FontAwesomeIcon icon={faRightFromBracket}/> logout</Row>
             </Column>
         </div>
     )
