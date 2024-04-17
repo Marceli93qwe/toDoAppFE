@@ -41,9 +41,12 @@ export const BookmarkContextProvider = ({children}: Props) => {
         // TOGGLE SCREEN LOCK
         toggleScreenLock(!bookmarkFormActive);
     }
+
+    const test = () => console.log("ok")
     return (
         <>
             <BookmarkContext.Provider value={{
+                test,
                 allUsersTasks,
                 bookmarks,
                 chosenBookmarkId,

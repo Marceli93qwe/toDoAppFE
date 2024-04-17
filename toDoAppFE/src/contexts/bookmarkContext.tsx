@@ -3,6 +3,7 @@ import {BookmarkRecord} from "../types/BookmarkRecord.ts";
 import {TaskRecord} from "../types/TaskRecord.ts";
 
 export const BookmarkContext = createContext<{
+    test: () => void,
     allUsersTasks: TaskRecord[] | null,
     bookmarks: BookmarkRecord[] | null,
     chosenBookmarkId: string | null,
@@ -13,6 +14,7 @@ export const BookmarkContext = createContext<{
     bookmarkFormActive: boolean,
     setBookmarkFormActive: () => void,
 }>({
+    test: () => null,
     allUsersTasks: [],
     bookmarks: [],
     chosenBookmarkId: "",

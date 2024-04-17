@@ -5,14 +5,24 @@ import {Main} from "./Main/Main.tsx";
 import {ProtectedRoute} from "./common/ProtectedRoute.tsx";
 import {LoginPage} from "./LoginPage/LoginPage.tsx";
 import {Register} from "./LoginPage/Register.tsx";
+import {UserMenuVariation} from "./UserMenuVariation/UserMenuVariation.tsx";
 
 export function App() {
 
     //
     return (
         <Router>
+            <UserMenuVariation/>
             <Header/>
             <Routes>
+                <Route
+                    path={"/menu"}
+                    element={
+                        <ProtectedRoute shouldBeLoggedIn={true}>
+                            <UserMenuVariation/>
+                        </ProtectedRoute>
+                    }
+                />
                 <Route
                     path={"/"}
                     element={
