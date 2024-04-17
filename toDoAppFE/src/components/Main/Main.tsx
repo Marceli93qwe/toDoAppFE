@@ -5,9 +5,11 @@ import {BookmarkContextProvider} from "../contextProviders/BookmarkContextProvid
 import {AdditionButton} from "./AdditionButton.tsx";
 import {TaskAdditionForm} from "./TasksSection/TaskForm/TaskAdditionForm.tsx";
 import {AddBookmarkForm} from "./BookmarksSection/AddBookmarkForm.tsx";
+import {useContext} from "react";
+import {BookmarkContext} from "../../contexts/bookmarkContext.tsx";
 
 export const Main = () => {
-
+    const {chosenBookmarkId} = useContext(BookmarkContext)
     return (
         <main>
             <BookmarkContextProvider>
@@ -15,7 +17,13 @@ export const Main = () => {
                 <TaskAdditionForm/>
                 <Bookmarks/>
                 <TasksSection/>
-                <AdditionButton/>
+                {
+                    chosenBookmarkId
+                        ?
+                        <AdditionButton/>
+                        :
+                        <></>
+                }
             </BookmarkContextProvider>
         </main>
     )
