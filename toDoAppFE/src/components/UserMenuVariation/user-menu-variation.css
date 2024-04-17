@@ -36,6 +36,12 @@
 
 }
 
+.user-menu-xmark {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.2rem;
+}
+
 .bottom-panel {
     padding: 1.5rem;
 }

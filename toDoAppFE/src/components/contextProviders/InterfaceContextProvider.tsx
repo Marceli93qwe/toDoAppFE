@@ -6,9 +6,10 @@ interface Props {
 }
 
 export const InterfaceContextProvider = ({children}: Props) => {
-    const [userMenuDisplay] = useState(false);
+    const [userMenuDisplay, setUserMenuDisplay] = useState(false);
     const toggleUserMenuDisplay = () => {
-        console.log(userMenuDisplay);
+        setUserMenuDisplay(prev => !prev);
+        console.log(userMenuDisplay)
     }
     return (
         <InterfaceContext.Provider value={{userMenuDisplay, toggleUserMenuDisplay}}>
