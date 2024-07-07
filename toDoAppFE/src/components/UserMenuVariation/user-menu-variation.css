@@ -45,3 +45,12 @@
 .bottom-panel {
     padding: 1.5rem;
 }
+
+.menu-link-style {
+    color: initial;
+    text-decoration: none !important;
+    text-underline: none;
+    margin: initial;
+    width: 100%;
+
+}

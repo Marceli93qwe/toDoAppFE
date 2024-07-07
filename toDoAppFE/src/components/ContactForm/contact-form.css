@@ -1,0 +1,27 @@
+
+.contact-form {
+    position: absolute;
+    top: 18rem;
+    text-transform: lowercase;
+    width: 100vw;
+    height: calc(100vw - 10rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.contact-form p {
+    font-weight: bolder;
+}
+
+.contact-form input, textarea {
+    width: 16rem;
+    height: 1.3rem;
+    display: block;
+}
+
+.contact-form textarea {
+    height: 7rem;
+}

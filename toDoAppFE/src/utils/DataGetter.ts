@@ -1,7 +1,7 @@
 import {reload} from "./reloader.ts";
 
 export const getBookmarks = async () => {
-    const bookmarksFromBE = await fetch("http://192.168.31.115:3001/users/bookmarks", {
+    const bookmarksFromBE = await fetch("http://192.168.100.13:3001/users/bookmarks", {
         method: "GET",
         headers: {
             Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEzZDYwNTc4LWM2ZWEtNDlkNC1hNTZiLTI3YjY1OTZjYmU1NyIsImlhdCI6MTcwNjc4ODkxM30.w0hFeHXasU4TDF_F8oJ88dbzMGj69hthSceCsQCT6S4",
@@ -13,7 +13,7 @@ export const getBookmarks = async () => {
 }
 
 export const getTasksFromBookmark = async (bookmarkId: string | null) => {
-    const tasksFromBookmark = await fetch(`http://192.168.31.115:3001/users/bookmarks/${bookmarkId}/tasks`, {
+    const tasksFromBookmark = await fetch(`http://192.168.100.13:3001/users/bookmarks/${bookmarkId}/tasks`, {
         method: "GET",
         headers: {
             Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEzZDYwNTc4LWM2ZWEtNDlkNC1hNTZiLTI3YjY1OTZjYmU1NyIsImlhdCI6MTcwNjc4ODkxM30.w0hFeHXasU4TDF_F8oJ88dbzMGj69hthSceCsQCT6S4`,
@@ -25,7 +25,7 @@ export const getTasksFromBookmark = async (bookmarkId: string | null) => {
 }
 
 export const removeBookmark = async (bookmarkId: string | null) => {
-    const response = await fetch(`http://192.168.31.115:3001/users/bookmarks/${bookmarkId}`,
+    const response = await fetch(`http://192.168.100.13:3001/users/bookmarks/${bookmarkId}`,
         {
             method: "DELETE",
             headers: {
@@ -39,7 +39,7 @@ export const removeBookmark = async (bookmarkId: string | null) => {
 }
 
 export const removeTaskFromBookmark = async (bookmarkId: string | null, taskId: string | null) => {
-    const response = await fetch(`http://192.168.31.115:3001/users/bookmarks/${bookmarkId}/tasks/${taskId}`, {
+    const response = await fetch(`http://192.168.100.13:3001/users/bookmarks/${bookmarkId}/tasks/${taskId}`, {
         method: "DELETE",
         headers: {
             Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEzZDYwNTc4LWM2ZWEtNDlkNC1hNTZiLTI3YjY1OTZjYmU1NyIsImlhdCI6MTcwNjc4ODkxM30.w0hFeHXasU4TDF_F8oJ88dbzMGj69hthSceCsQCT6S4`,
@@ -50,7 +50,7 @@ export const removeTaskFromBookmark = async (bookmarkId: string | null, taskId: 
 }
 
 export const getAllUsersTasks = async () => {
-    const allUsersTasks = await fetch("http://192.168.31.115:3001/users/bookmarks/tasks/all", {
+    const allUsersTasks = await fetch("http://192.168.100.13:3001/users/bookmarks/tasks/all", {
         method: "GET",
         headers: {
             Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEzZDYwNTc4LWM2ZWEtNDlkNC1hNTZiLTI3YjY1OTZjYmU1NyIsImlhdCI6MTcwNjc4ODkxM30.w0hFeHXasU4TDF_F8oJ88dbzMGj69hthSceCsQCT6S4"

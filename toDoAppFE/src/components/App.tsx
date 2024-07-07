@@ -8,6 +8,7 @@ import {Register} from "./LoginPage/Register.tsx";
 import {UserMenuVariation} from "./UserMenuVariation/UserMenuVariation.tsx";
 import {InterfaceContextProvider} from "./contextProviders/InterfaceContextProvider.tsx";
 import {BookmarkContextProvider} from "./contextProviders/BookmarkContextProvider.tsx";
+import {ContactForm} from "./ContactForm/ContactForm.tsx";
 
 export function App() {
 
@@ -46,6 +47,10 @@ export function App() {
                                    <ProtectedRoute shouldBeLoggedIn={false}>
                                        <Register/>
                                    </ProtectedRoute>}
+                        />
+                        <Route
+                            path={"/contact"}
+                            element={<ContactForm/>}
                         />
                     </Routes>
                 </Router>

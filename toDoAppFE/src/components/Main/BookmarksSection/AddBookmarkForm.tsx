@@ -11,7 +11,7 @@ export const AddBookmarkForm = () => {
 
     const handleBookmarkFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        await fetch("http://192.168.31.115:3001/users/bookmarks", {
+        await fetch("http://192.168.100.13:3001/users/bookmarks", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -10,7 +10,7 @@ export const Register = () => {
     const [password, setPassword] = useState("");
     const [username, setUsername] = useState("");
     const signUp = async () => {
-        const response = await fetch("http://192.168.31.115:3001/auth/register", {
+        const response = await fetch("http://192.168.100.13:3001/auth/register", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

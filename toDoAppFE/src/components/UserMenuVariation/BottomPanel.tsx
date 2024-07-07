@@ -10,6 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import {Row} from "../common/Row.tsx";
 import {logOut} from "../../utils/authenticateUser.ts";
+import {Link} from "react-router-dom";
 
 export const BottomPanel = () => {
 
@@ -20,7 +21,10 @@ export const BottomPanel = () => {
                 <Row style={{gap: "0.6rem"}}><FontAwesomeIcon icon={faChartLine}/> statistics</Row>
                 <Row style={{gap: "0.6rem"}}><FontAwesomeIcon icon={faPalette}/> theme</Row>
                 <Row style={{gap: "0.6rem"}}><FontAwesomeIcon icon={faCircleInfo}/> info</Row>
-                <Row style={{gap: "0.6rem"}}><FontAwesomeIcon icon={faEnvelope}/> contact</Row>
+                <Link to={"/contact"} className={"menu-link-style"}>
+                    <Row style={{gap: "0.6rem"}}><FontAwesomeIcon
+                        icon={faEnvelope}/> contact</Row>
+                </Link>
                 <Row click={logOut} style={{gap: "0.6rem"}}><FontAwesomeIcon icon={faRightFromBracket}/> logout</Row>
             </Column>
         </div>

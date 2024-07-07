@@ -13,7 +13,7 @@ export const LoginPage = () => {
     const navigateToRegistrationPage = () => navigate("/register");
 
     const signIn = async () => {
-        const response = await fetch("http://192.168.31.115:3001/auth/login", {
+        const response = await fetch("http://192.168.100.13:3001/auth/login", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

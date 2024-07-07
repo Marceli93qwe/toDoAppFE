@@ -3,7 +3,7 @@ import {reload} from "./reloader.ts";
 export const authenticateUser = async () => {
     const token = getJWTFromStorage();
     if (token) {
-        const response = await fetch("http://192.168.31.115:3001/auth/authenticate",
+        const response = await fetch("http://192.168.100.13:3001/auth/authenticate",
             {
                 method: "GET",
                 headers: {
