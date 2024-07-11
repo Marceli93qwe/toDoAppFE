@@ -1,16 +1,17 @@
-import {InputBox} from "../Main/TasksSection/TaskForm/InputBox.tsx";
+import {InputBox} from "../../Main/TasksSection/TaskForm/InputBox.tsx";
 import "./login-page.css"
-import {Button} from "../common/button.tsx";
+import {Button} from "../../common/Button.tsx";
 import {useState} from "react";
-import {navigate} from "../../utils/navigator.ts";
-import {SectionLabel} from "../common/SectionLabel.tsx";
-import {setJWTtoStorage} from "../../utils/authenticateUser.ts";
+import {navigate} from "../../../utils/navigator.ts";
+import {SectionLabel} from "../../common/SectionLabel.tsx";
+import {setJWTtoStorage} from "../../../utils/authenticateUser.ts";
 
 export const LoginPage = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     const navigateToRegistrationPage = () => navigate("/register");
+    const navigateToContactPage = () => navigate("/contact");
 
     const signIn = async () => {
         const response = await fetch("http://192.168.100.13:3001/auth/login", {
@@ -39,6 +40,7 @@ export const LoginPage = () => {
                           label={"password"}/>
                 <Button click={signIn} text={"sign in"}/>
             </form>
+            <Button click={navigateToContactPage} text={"Contact"}/>
             <SectionLabel>No account?</SectionLabel>
             <Button click={navigateToRegistrationPage} text={"register"}/>
         </div>

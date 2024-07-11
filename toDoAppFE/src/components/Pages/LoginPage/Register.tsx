@@ -1,8 +1,8 @@
-import {SectionLabel} from "../common/SectionLabel.tsx";
-import {Button} from "../common/button.tsx";
-import {navigate} from "../../utils/navigator.ts";
+import {SectionLabel} from "../../common/SectionLabel.tsx";
+import {Button} from "../../common/Button.tsx";
+import {navigate} from "../../../utils/navigator.ts";
 import {useState} from "react";
-import {InputBox} from "../Main/TasksSection/TaskForm/InputBox.tsx";
+import {InputBox} from "../../Main/TasksSection/TaskForm/InputBox.tsx";
 
 export const Register = () => {
     const navigateToLoginPage = () => navigate("/login");

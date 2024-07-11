@@ -3,12 +3,13 @@ import {Header} from "./Header/Header";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import {Main} from "./Main/Main.tsx";
 import {ProtectedRoute} from "./common/ProtectedRoute.tsx";
-import {LoginPage} from "./LoginPage/LoginPage.tsx";
-import {Register} from "./LoginPage/Register.tsx";
+import {LoginPage} from "./Pages/LoginPage/LoginPage.tsx";
+import {Register} from "./Pages/LoginPage/Register.tsx";
 import {UserMenuVariation} from "./UserMenuVariation/UserMenuVariation.tsx";
 import {InterfaceContextProvider} from "./contextProviders/InterfaceContextProvider.tsx";
 import {BookmarkContextProvider} from "./contextProviders/BookmarkContextProvider.tsx";
-import {ContactForm} from "./ContactForm/ContactForm.tsx";
+import {ContactForm} from "./Pages/ContactForm/ContactForm.tsx";
+import {Themes} from "./Pages/Themes/Themes.tsx";
 
 export function App() {
 
@@ -51,6 +52,10 @@ export function App() {
                         <Route
                             path={"/contact"}
                             element={<ContactForm/>}
+                        />
+                        <Route
+                            path={"/themes"}
+                            element={<Themes/>}
                         />
                     </Routes>
                 </Router>

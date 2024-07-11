@@ -6,3 +6,7 @@ export const toggleScreenLock = (isLockActive: boolean) => {
 export const scrollToTop = () => {
     window.scrollTo({top: 0, behavior: "instant"});
 }
+
+export const getTheme = () => {
+    return localStorage.getItem("theme") as string;
+}

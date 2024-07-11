@@ -26,7 +26,6 @@ header p {
     justify-content: space-between;
     gap: 1.2rem;
     z-index: 5;
-    border-bottom: 0.14rem solid sandybrown;
 }
 
 .black-overlay {

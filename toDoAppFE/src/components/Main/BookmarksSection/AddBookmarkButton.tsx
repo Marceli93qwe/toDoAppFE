@@ -1,6 +1,6 @@
 import {useContext} from "react";
 import {BookmarkContext} from "../../../contexts/bookmarkContext.tsx";
-import {Button} from "../../common/button.tsx";
+import {Button} from "../../common/Button.tsx";
 
 
 export const AddBookmarkButton = () => {

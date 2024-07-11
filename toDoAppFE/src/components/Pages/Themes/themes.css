@@ -1,0 +1,66 @@
+.themes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.theme-card {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.theme-card.selected {
+    border-color: #007bff;
+}
+
+.theme-card img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.light-theme {
+    background-image: url("assets/mountains3.webp");
+}
+
+.light-theme-btn {
+
+    background-color: darkblue;
+    color: white;
+}
+
+.light-theme-plus-btn {
+    color: darkblue;
+}
+
+.light-theme-bookmark-progress {
+    background-color: darkblue;
+}
+
+.dark-theme {
+    background-image: url("assets/mountains4.webp");
+}
+
+.dark-theme-btn {
+    background-color: rebeccapurple;
+    color: white;
+}
+
+.dark-theme-plus-btn {
+    color: rebeccapurple;
+}
+
+.dark-theme-bookmark-progress {
+    background-color: rebeccapurple;
+}

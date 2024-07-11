@@ -19,7 +19,9 @@ export const BottomPanel = () => {
             <Column style={{gap: "1.5rem"}}>
                 <Row style={{gap: "0.6rem"}}><FontAwesomeIcon icon={faGear}/> settings</Row>
                 <Row style={{gap: "0.6rem"}}><FontAwesomeIcon icon={faChartLine}/> statistics</Row>
-                <Row style={{gap: "0.6rem"}}><FontAwesomeIcon icon={faPalette}/> theme</Row>
+                <Link to={"/themes"} className={"menu-link-style"}>
+                    <Row style={{gap: "0.6rem"}}><FontAwesomeIcon icon={faPalette}/> theme</Row>
+                </Link>
                 <Row style={{gap: "0.6rem"}}><FontAwesomeIcon icon={faCircleInfo}/> info</Row>
                 <Link to={"/contact"} className={"menu-link-style"}>
                     <Row style={{gap: "0.6rem"}}><FontAwesomeIcon
